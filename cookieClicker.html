@@ -19,21 +19,32 @@
   <p id="counter">Clicks: 0</p>
   <p id="message">Start clicking the cookie!</p>
   <script>
-  // Select elements
-  const button = document.getElementById("cookieBtn");
-  const counterDisplay = document.getElementById("counter");
-  const messageDisplay = document.getElementById("message");
+    // Select elements
+    const button = document.getElementById("cookieBtn");
+    const counterDisplay = document.getElementById("counter");
+    const messageDisplay = document.getElementById("message");
 
-  // Initialize the data
-  let clickCount = 0;
+    // Initialize the data
+    let clickCount = 0;
 
-  // Add the listener
-  button.addEventListener("click", function () {
-    // increase the logic variablee
-    clickCount++;
-    
-    // update thee visual display
-    counterDisplay.textContent = "Clicks: " + clickCount;
+    // Add the listener
+    button.addEventListener("click", function () {
+      // increase the logic variablee
+      clickCount++;
+      
+      // update thee visual display
+      counterDisplay.textContent = "Clicks: " + clickCount;
+
+      if (clickCount === 10) {
+      messageDisplay.textContent = "You're just getting started!";
+    } else if (clickCount === 25) {
+      messageDisplay.textContent = "Wow, that's a lot of cookies 🍪";
+    } else if (clickCount === 50) {
+      messageDisplay.textContent = "Are you still clicking?";
+    } else if (clickCount === 100) {
+      messageDisplay.textContent = "You win! Maybe take a break 😅";
+      document.body.style.backgroundColor = "#d4edda";
+    }
   });
 </script>
 

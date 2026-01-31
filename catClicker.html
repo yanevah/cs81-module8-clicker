@@ -1,0 +1,71 @@
+<!-- Nina Janev -->
+<!--https://github.com/yanevah/cs81-module8-clicker-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cat Clicker</title>
+</head>
+
+<body
+  style="
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 60px;
+    background-color: #fff6f0;
+  "
+>
+  <h1>🐱 Cat Clicker 🐱</h1>
+
+  <!-- Cat button -->
+  <button
+    id="catButton"
+    style="font-size: 2rem; padding: 10px 20px; cursor: pointer;"
+  >
+    🐾 Click the Cat 🐾
+  </button>
+
+  <!-- Counter -->
+  <p id="counter" style="font-size: 1.5rem;">
+    Cats clicked: 0
+  </p>
+
+  <!-- Message output -->
+  <p id="message" style="font-size: 1.3rem;">
+    Start petting the cat!
+  </p>
+
+  <script>
+    // Select elements from the DOM
+    const catButton = document.getElementById("catButton");
+    const counterDisplay = document.getElementById("counter");
+    const messageDisplay = document.getElementById("message");
+
+    // Track number of clicks
+    let count = 0;
+
+    // Listen for clicks on the cat button
+    catButton.addEventListener("click", function () {
+      count++;
+
+      // Update counter text
+      counterDisplay.textContent = "Cats clicked: " + count;
+
+      // Milestone messages
+      if (count === 10) {
+        messageDisplay.textContent = "The cat is purring 😸";
+      } else if (count === 25) {
+        messageDisplay.textContent = "You are now the cat’s favourite person 🐾";
+      } else if (count === 50) {
+        messageDisplay.textContent = "The cat's tail is twitching. 😾";
+        document.body.style.backgroundColor = "#ffe4e1";
+      } else if (count === 100) {
+        messageDisplay.textContent = "You tried to touch the tummy and the claws came out 🐅";
+        document.body.style.backgroundColor = "#fa0728";
+      }
+    });
+  </script>
+</body>
+</html>
